@@ -19,8 +19,7 @@
 export default {
   q1: { yes: () => "q2", no: () => "q2" },
   q2: { yes: () => "r1", no: () => "q3" },
-  q3: { cont: () => "q4" },
-  q4: { cont: () => "q5" },
+  q3: { cont: () => "q5" },
   q5: { cont: (state) => (state.symptomScore ? "r7" : "q6") },
   q6: { yes: (state) => (state.q1 ? "r9" : "r7"), no: () => "q7" },
   q7: { yes: (state) => (state.q1 ? "r9" : "r7"), no: () => "q8" },
