@@ -1,8 +1,8 @@
 /*
     q1: "fully-vaccinated"
     q2: "severe-symptoms"
-    q3: "age-range"
-    q4: "postal-code"
+      q3: "age-range" //removed
+      q4: "postal-code" //removed 
     q5: "symptoms"
     q6: "covid-exposure"
     q7: "covid-alert"
@@ -18,8 +18,7 @@
 */
 export default {
   q1: { yes: () => "q2", no: () => "q2" },
-  q2: { yes: () => "r1", no: () => "q3" },
-  q3: { cont: () => "q5" },
+  q2: { yes: () => "r1", no: () => "q5" },
   q5: { cont: (state) => (state.symptomScore ? "r7" : "q6") },
   q6: { yes: (state) => (state.q1 ? "r9" : "r7"), no: () => "q7" },
   q7: { yes: (state) => (state.q1 ? "r9" : "r7"), no: () => "q8" },
